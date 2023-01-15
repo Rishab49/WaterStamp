@@ -47,7 +47,12 @@ export function EditOptions({
   }
 
   return (
-    <div className="h-[60px]  flex flex-row bg-white rounded gap-2 p-2 overflow-x-auto">
+    <div
+      className="h-[60px] md:w-fit w-[90%] flex flex-row bg-white rounded gap-2 p-2 overflow-x-auto absolute top-[50px] left-[50%] translate-x-[-50%] translate-y-0  shadow-md"
+      style={{
+        display: currentElementRef !== undefined ? "flex" : "none",
+      }}
+    >
       <IconButton
         disabled={currentElementRef?.type === "image"}
         src={BoldIcon}

@@ -71,18 +71,18 @@ export function Edit({ imageSrc, dimension }) {
   });
 
   return (
-    <div className="flex flex-col lg:flex-row items-stretch h-[calc(100vh_+_200px)] md:h-[calc(100vh_-_50px)] w-[100%] relative">
-      <div className="relative flex-[3] flex flex-col items-stretch justify-stretch">
+    <div className="flex flex-col lg:flex-row items-stretch h-fit w-[100%] relative">
+      <div className="relative h-[calc(100vh_-_50px)] flex flex-col items-stretch justify-stretch w-full">
         <EditOptions
           currentElementRef={currentElementRef}
           familyOption={familyOption}
           sizeOption={sizeOption}
           setShouldReload={setShouldReload}
         ></EditOptions>
-        <div className="flex items-center justify-center max-h-screen h-[calc(100vh_-_110px)] p-4 flex-1">
+        <div className="flex items-center justify-center max-h-screen h-full p-4 flex-1 w-full">
           <img
             src={imageSrc}
-            className={`h-[75%] w-auto max-h-[75%]`}
+            className={`md:h-[90%] md:w-auto w-[90%] h-auto`}
             style={{ aspectRatio: aspectRatio }}
             ref={imageElement}
             imgheight={dimension.height}

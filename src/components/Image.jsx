@@ -96,7 +96,7 @@ export const Image = forwardRef(function Image(
     if (evCache.length === 1) {
       if (e.clientX !== 0 && e.clientY !== 0) {
         let x = e.clientX - current.clientWidth / 2;
-        let y = e.clientY - 35 - current.clientHeight / 2;
+        let y = e.clientY - 35 + window.scrollY - current.clientHeight / 2;
         setCoordinates({ x: x, y: y });
       }
     }

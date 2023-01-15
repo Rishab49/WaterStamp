@@ -56,14 +56,15 @@ export const Text = forwardRef(function Text(
     current.addEventListener("pointerup", onPointerUp);
   };
 
-  const onPointerUp = () => {
+  const onPointerUp = (e) => {
+    e.target.releasePointerCapture(e.pointerId);
     current.removeEventListener("pointermove", onPointerMove);
     current.removeEventListener("pointerup", onPointerUp);
   };
   const onPointerMove = (e) => {
     if (e.clientX !== 0 && e.clientY !== 0) {
       let x = e.clientX - current.clientWidth / 2;
-      let y = e.clientY - 35 - current.clientHeight / 2;
+      let y = e.clientY - 35 + window.scrollY - current.clientHeight / 2;
       setCoordinates({ x: x, y: y });
     }
   };

@@ -20,7 +20,7 @@ function App() {
   ]);
 
   return (
-    <div className="h-fit md:h-screen min-h-screen w-screen overflow-x-hidden">
+    <div className="h-fit min-h-screen w-screen overflow-x-hidden edit-container">
       <div className="h-[50px] w-full flex items-center justify-flex-start p-2">
         <img src={WaterStamp} className="h-full w-auto"/>
       </div>

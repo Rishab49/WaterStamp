@@ -27,7 +27,7 @@ export function exportImage(
   setIsProcessing(true);
 
 let data = JSON.stringify({params:imageObj});
-  fetch("http://localhost:3000/image",{
+  fetch("https://water-stamp-backend.vercel.app/image",{
     method:"POST",
     body:data,
     headers:{

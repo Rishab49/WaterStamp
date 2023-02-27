@@ -4,8 +4,9 @@ import LinkedinIcon from "../assets/icons/linkedin.png";
 
 
 import { useNavigate } from "react-router-dom";
+import { PacmanLoader } from "react-spinners";
 
-export function Greeting({isDownloading,isDownloaded,setIsDownloaded,setIsDownloading}) {
+export function Greeting({isProcessing,isDownloaded,setIsDownloaded,setIsProcessing}) {
 
 
     const navigate = useNavigate();
@@ -13,23 +14,23 @@ export function Greeting({isDownloading,isDownloaded,setIsDownloaded,setIsDownlo
     <div
       className="items-center justify-center flex h-full w-screen absolute gap-2 p-4"
       style={{
-        display: isDownloading ? "flex" : "none",
+        display: isProcessing ? "flex" : "none",
         background: "#ffffff",
       }}
     >
       <div
         className="flex flex-col gap-4 items-center justify-center"
         style={{
-          display: isDownloading && !isDownloaded ? "flex" : "none",
+          display: isProcessing && !isDownloaded ? "flex" : "none",
         }}
       >
-        <img src={DownloadingGIF} className="h-auto w-[50px]"></img>
-        <p>Downloading</p>
+        <PacmanLoader loading={isProcessing} color="#00ff00"/>
+        <p>Processing...</p>
       </div>
       <div
-        className="flex items-center justify-center flex-col gap-5 flex-col text-center"
+        className="flex items-center justify-center flex-col gap-5 text-center"
         style={{
-          display: isDownloading && isDownloaded ? "flex" : "none",
+          display: isProcessing && isDownloaded ? "flex" : "none",
         }}
       >
         <img src={ThanksSticker} className="h-[200px] w-auto"></img>
@@ -39,7 +40,7 @@ export function Greeting({isDownloading,isDownloaded,setIsDownloaded,setIsDownlo
           className="h-[52px] w-[200px] p-3 rounded bg-green-600 cursor-pointer text-white flex items-center justify-center"
           onClick={() => {
             setIsDownloaded(false);
-            setIsDownloading(false);
+            setIsProcessing(false);
           }}
         >
           Continue Editing

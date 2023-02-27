@@ -11,7 +11,7 @@ import { Greeting } from "../components/Greeting";
 export function Edit({ imageSrc, dimension }) {
   let aspectRatio = `${dimension.width}/${dimension.height}`;
   const [elements, setElements] = useState([]);
-  const [isDownloading, setIsDownloading] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [isDownloaded, setIsDownloaded] = useState(false);
   const [shouldReload, setShouldReload] = useState(true);
   const elementRefs = useRef([]);
@@ -33,7 +33,7 @@ export function Edit({ imageSrc, dimension }) {
       elementRefs,
       imageElement.current,
       scale,
-      setIsDownloading,
+      setIsProcessing,
       setIsDownloaded
     );
   };
@@ -123,9 +123,9 @@ export function Edit({ imageSrc, dimension }) {
       ></ActionContainer>
       <Greeting
         isDownloaded={isDownloaded}
-        isDownloading={isDownloading}
+        isProcessing={isProcessing}
         setIsDownloaded={setIsDownloaded}
-        setIsDownloading={setIsDownloading}
+        setIsProcessing={setIsProcessing}
       ></Greeting>
     </div>
   );

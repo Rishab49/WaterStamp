@@ -27,6 +27,10 @@ export function exportImage(
   setIsProcessing(true);
 axios.post("https://water-stamp-backend.vercel.app/image",{
   params:imageObj
+},{
+  headers:{
+    'Content-Type': 'application/json'
+  }
 }).then(res => {
   setIsDownloaded(true);
   let a = document.createElement("a");

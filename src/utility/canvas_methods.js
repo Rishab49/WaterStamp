@@ -42,8 +42,6 @@ let data = JSON.stringify({params:imageObj});
       a.download = "image.png";
       a.click();
     })
- 
-
 })
 ;
 

@@ -29,6 +29,7 @@ axios.post("https://water-stamp-backend.vercel.app/image",{
   params:imageObj
 },{
   headers:{
+    'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json'
   }
 }).then(res => {

@@ -25,14 +25,24 @@ export function exportImage(
   };
   console.log(imageObj);
   setIsProcessing(true);
-axios.post("https://water-stamp-backend.vercel.app/image",{
-  params:imageObj
-}).then(res => {
-  setIsDownloaded(true);
-  let a = document.createElement("a");
-  a.href= res.data;
-  a.download = "image";
-  a.click();
+
+let data = JSON.stringify({params:imageObj});
+
+  fetch("http://localhost:3000/image",{
+    method:"POST",
+    body:data,
+    headers:{
+      'Content-Type': 'application/json'
+    }
+  }).then(res => {
+    res.json().then(data => {
+      setIsDownloaded(true);
+      let a = document.createElement("a");
+      a.href= data.data;
+      a.download = "image.png";
+      a.click();
+    })
+ 
 
 })
 ;

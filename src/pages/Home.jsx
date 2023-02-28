@@ -17,10 +17,10 @@ export function Home({ setImageSrc, setDimension }) {
 
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh_-_50px)] w-[100%] gap-4">
-      <p className="text-base md:text-2xl font-medium">
+      <p className="text-xl md:text-2xl font-medium text-center">
         Watermark your png or jpeg/jpg image
       </p>
-      <p className="font-xs">
+      <p className="font-xs text-center">
         use images smaller than 250kb due to restriction of server*
       </p>
       <label

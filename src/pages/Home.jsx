@@ -17,13 +17,19 @@ export function Home({ setImageSrc, setDimension }) {
 
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh_-_50px)] w-[100%] gap-4">
-      <p className="text-base md:text-2xl">Watermark your png or jpeg/jpg image</p>
+      <p className="text-base md:text-2xl font-medium">
+        Watermark your png or jpeg/jpg image
+      </p>
+      <p className="font-xs">
+        use images smaller than 250kb due to restriction of server*
+      </p>
       <label
         htmlFor="image"
         className="h-fit w-fit p-4 rounded bg-green-600 cursor-pointer text-white"
       >
         Choose an image
       </label>
+     
       <input
         className="hidden"
         type="file"
@@ -31,6 +37,7 @@ export function Home({ setImageSrc, setDimension }) {
         ref={inputElement}
         id="image"
       ></input>
+      
     </div>
   );
 }

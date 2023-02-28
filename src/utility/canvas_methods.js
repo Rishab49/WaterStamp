@@ -28,6 +28,7 @@ export function exportImage(
 
 let data = JSON.stringify({params:imageObj});
   fetch("https://water-stamp-backend.vercel.app/image",{
+  // fetch("http://localhost:3000/image",{
     method:"POST",
     body:data,
     headers:{
@@ -41,6 +42,11 @@ let data = JSON.stringify({params:imageObj});
       a.download = "image.png";
       a.click();
     })
+}).catch(e => {
+  console.log(e);
+  alert("your images are greater than 250kb collectively");
+  setIsDownloaded(false);
+  setIsProcessing(false);
 })
 ;
 

@@ -27,20 +27,15 @@ export function Edit() {
 
   }, []);
 
-  useEffect(() => location.setLocation(window.location.pathname),[]);
+  useEffect(() => location.setLocation(window.location.pathname), []);
   return (
     <div className="flex flex-row items-stretch justify-center h-[calc(100vh_-_50px)] w-[100%] gap-4 relative">
-      <TextPattern/>
+      <TextPattern />
       <div className="h-full flex-1 flex items-center justify-center  p-8  ">
-        <div className="container  overflow-hidden flex items-center justify-center relative"
-          style={{
-            height: image.image.dimension.ratio >= 1 ? "auto" : "100%",
-            width: image.image.dimension.ratio >= 1 ? "100%" : "auto",
-          }}
+        <div className="container  overflow-hidden flex items-center justify-center relative h-full w-auto"
+
         >
-          <img src={image.image.src} className={image.image.dimension.ratio >= 1 ? "w-full h-auto dummy" : "w-auto h-full dummy"} style={{
-            aspectRatio: image.image.dimension.width / image.image.dimension.height
-          }} />
+          <img src={image.image.src} className="w-auto h-full dummy" />
 
           <div className="pattern absolute top-1/2 left-1/2  flex flex-wrap gap-0 items-start justify-start" style={{
             height: props.position == "repeat" ? image.image.dimension.ratio >= 1 ? "auto" : "120%" : "100%",

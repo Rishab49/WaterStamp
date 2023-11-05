@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { Edit } from "./pages/Edit";
 import { Home } from "./pages/Home";
-import WaterStamp from "./assets/WaterStamp.png";
+import WaterStamp from "/waterstamp.png";
 import { Download } from "./pages/Download";
 import { animate, AnimationSequence } from "framer-motion";
 import { useEffect, useState } from "react";

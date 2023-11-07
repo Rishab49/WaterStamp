@@ -32,8 +32,10 @@ export function Edit() {
     <div className="flex flex-row items-stretch justify-center h-[calc(100vh_-_50px)] w-[100%] gap-4 relative">
       <TextPattern />
       <div className="h-full flex-1 flex items-center justify-center  p-8  ">
-        <div className="container  overflow-hidden flex items-center justify-center relative h-full w-auto"
-
+        <div className="container  overflow-hidden flex items-center justify-center relative w-full h-auto sm:w-auto sm:h-full"
+  style={{
+    aspectRatio:`${image.image.dimension.width} / ${image.image.dimension.height}`
+  }}
         >
           <img src={image.image.src} className="w-auto h-full dummy" />
 

@@ -23,11 +23,9 @@ export function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh_-_50px)] w-[100%] gap-4">
-      <p className="text-xl md:text-2xl font-medium text-center">
-        Watermark your png or jpeg/jpg image
-      </p>
-      <p className="font-xs text-center">
-        use images smaller than 250kb due to restriction of server*
+      <h1 className="text-3xl md:text-5xl font-bold">WaterStamp</h1>
+      <p className="text-center w-[80%] max-w-[40ch]">
+        add watermark using text or image to your image within a minute!!
       </p>
       <label
         htmlFor="image"

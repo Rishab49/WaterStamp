@@ -38,9 +38,9 @@ export function createStyleElementFromCSS() {
     style.setAttribute("type", "text/css");
 
     let styleRules = [];
-    for (let i = 0; i < document.styleSheets[2].cssRules.length; i++) {
+    for (let i = 0; i < document.styleSheets[1].cssRules.length; i++) {
         // @ts-ignore
-        styleRules.push(document.styleSheets[2].cssRules.item(i).cssText);
+        styleRules.push(document.styleSheets[1].cssRules.item(i).cssText);
     }
     style.appendChild(document.createTextNode(styleRules.join(" ")));
     console.log(style);
